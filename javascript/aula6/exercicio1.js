@@ -26,6 +26,6 @@ function executarComparacao() {
 
 const mainScriptPath = process.argv[1];
 
-if (mainScriptPath.includes("test.js") !== false) {
+if (mainScriptPath.includes("jest.js") === false) {
     executarComparacao();
 }
