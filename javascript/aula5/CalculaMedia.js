@@ -1,19 +1,19 @@
 import readlineSync from 'readline-sync';
 
-let n1 = 0;
-let n2 = 0;
-let n3 = 0;
-let n4 = 0;
-let average = 0;
+let nota1 = 0;
+let nota2 = 0;
+let nota3 = 0;
+let nota4 = 0;
+let media = 0;
 
-n1 = readlineSync.questionFloat("Qual a sua primeira nota? ");
-n2 = readlineSync.questionFloat("Qual a sua segunda nota? ");
-n3 = readlineSync.questionFloat("Qual a sua terceira nota? ");
-n4 = readlineSync.questionFloat("Qual a sua quarta nota? ");
+nota1 = readlineSync.questionFloat("Qual a sua primeira nota? ");
+nota2 = readlineSync.questionFloat("Qual a sua segunda nota? ");
+nota3 = readlineSync.questionFloat("Qual a sua terceira nota? ");
+nota4 = readlineSync.questionFloat("Qual a sua quarta nota? ");
 
-average = (n1 + n2 + n3 + n4) / 4;
+media = (nota1 + nota2 + nota3 + nota4) / 4;
 
 console.log(
     `A sua média final é: 
-    ${average.toFixed(2)}`
+    ${media.toFixed(2)}`
 );
