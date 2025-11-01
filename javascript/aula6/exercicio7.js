@@ -1,5 +1,7 @@
 import readlineSync from 'readline-sync';
 
+// Refatorar para poder testar as funções separadamente
+
 const numero1 = readlineSync.questionFloat('Digite o primeiro número: ');
 const numero2 = readlineSync.questionFloat('Digite o segundo número: ');
 const operacao = readlineSync.questionFloat('Digite a operação desejada (1 = +, 2 = -, 3 = *, 4 = /): ');

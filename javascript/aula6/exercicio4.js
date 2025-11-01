@@ -1,5 +1,7 @@
 import readlineSync from 'readline-sync';
 
+// Refatorar para poder testar as funções separadamente
+
 const subFilo = readlineSync.question('Digite o subfilo do animal (Vertebrado/Invertebrado): ').toLowerCase();
 const classe = readlineSync.question('Digite a classe do animal (Ave/Mamífero/Inseto/Anelídeo): ').toLowerCase();
 const alimentacao = readlineSync.question('Digite a alimentação do animal (Carnívoro/Herbívoro/Onívoro): ').toLowerCase();

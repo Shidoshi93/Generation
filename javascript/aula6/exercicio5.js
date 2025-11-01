@@ -1,5 +1,7 @@
 import readlineSync from 'readline-sync';
 
+// Refatorar para poder testar as funções separadamente
+
 const codigoItem = readlineSync.questionInt('Digite o código do item (1-6): ');
 const quantidade = readlineSync.questionInt('Digite a quantidade desejada: ');
 const produtos = {

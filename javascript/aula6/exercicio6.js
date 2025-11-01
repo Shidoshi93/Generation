@@ -1,5 +1,7 @@
 import readLineSync from 'readline-sync';
 
+// Refatorar para poder testar as funções separadamente
+
 const nomeColaborador = readLineSync.question('Digite o nome do colaborador: ');
 const codigoCargo = readLineSync.questionInt('Digite o código do cargo (1-6): ');
 const salarioAtual = readLineSync.questionFloat('Digite o salário atual do colaborador: ');

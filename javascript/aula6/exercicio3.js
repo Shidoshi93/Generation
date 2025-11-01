@@ -1,5 +1,7 @@
 import readlineSync from 'readline-sync';
 
+// Refatorar para poder testar as funções separadamente
+
 const nome = readlineSync.question('Qual o seu nome? ');
 const idade = readlineSync.questionInt('Qual a sua idade? ');
 const ehDoador = "";

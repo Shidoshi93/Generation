@@ -1,5 +1,7 @@
 import readlineSync from 'readline-sync';
 
+// Refatorar para poder testar as funções separadamente
+
 export function verificaParOuImpar(num) {
     if (num % 2 === 0 && num > 0) {
         console.log(`O número ${num} é par e ${verificaNegativoOuPositivo(num)}!`);

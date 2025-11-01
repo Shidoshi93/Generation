@@ -1,5 +1,7 @@
 import readlineSync from 'readline-sync';
 
+// Refatorar para poder testar as funções separadamente
+
 const operacao = readlineSync.questionInt('Digite a operação desejada (1 = saldo, 2 = saque, 3 = deposito): ');
 let saqueOuDeposito;
 
