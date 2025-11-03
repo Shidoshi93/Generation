@@ -11,7 +11,7 @@ const cargos = {
 }
 
 export const calcularNovoSalario = (nomeColaborador, codigoCargo, salarioAtual) => {
-    let novoSalrio = salarioAtual + (cargos[codigoCargo].percentualAumento * salarioAtual);
+    let novoSalario = salarioAtual + (cargos?.[codigoCargo]?.percentualAumento * salarioAtual);
     let mensagem;
 
     switch (codigoCargo) {
@@ -19,37 +19,37 @@ export const calcularNovoSalario = (nomeColaborador, codigoCargo, salarioAtual) 
             mensagem = `
                         Colaborador: ${nomeColaborador}, 
                         Cargo: ${cargos[1].cargo}, Salário Atual: R$ ${salarioAtual.toFixed(2)}, 
-                        Novo Salário: R$ ${novoSalrio.toFixed(2)}`;
+                        Novo Salário: R$ ${novoSalario.toFixed(2)}`;
             break;
         case 2:
             mensagem = `
                         Colaborador: ${nomeColaborador}, 
                         Cargo: ${cargos[2].cargo}, Salário Atual: R$ ${salarioAtual.toFixed(2)}, 
-                        Novo Salário: R$ ${novoSalrio.toFixed(2)}`;
+                        Novo Salário: R$ ${novoSalario.toFixed(2)}`;
             break;
         case 3:
             mensagem = `
                         Colaborador: ${nomeColaborador}, 
                         Cargo: ${cargos[3].cargo}, Salário Atual: R$ ${salarioAtual.toFixed(2)}, 
-                        Novo Salário: R$ ${novoSalrio.toFixed(2)}`;
+                        Novo Salário: R$ ${novoSalario.toFixed(2)}`;
             break;
         case 4:
             mensagem = `
                         Colaborador: ${nomeColaborador}, 
                         Cargo: ${cargos[4].cargo}, Salário Atual: R$ ${salarioAtual.toFixed(2)}, 
-                        Novo Salário: R$ ${novoSalrio.toFixed(2)}`;
+                        Novo Salário: R$ ${novoSalario.toFixed(2)}`;
             break;
         case 5:
             mensagem = `
                         Colaborador: ${nomeColaborador}, 
                         Cargo: ${cargos[5].cargo}, Salário Atual: R$ ${salarioAtual.toFixed(2)}, 
-                        Novo Salário: R$ ${novoSalrio.toFixed(2)}`;
+                        Novo Salário: R$ ${novoSalario.toFixed(2)}`;
             break;
         case 6:
             mensagem = `
                         Colaborador: ${nomeColaborador}, 
                         Cargo: ${cargos[6].cargo}, Salário Atual: R$ ${salarioAtual.toFixed(2)}, 
-                        Novo Salário: R$ ${novoSalrio.toFixed(2)}`;
+                        Novo Salário: R$ ${novoSalario.toFixed(2)}`;
             break;
         default:
             mensagem = "Código de cargo inválido!";
