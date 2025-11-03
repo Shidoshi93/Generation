@@ -1,7 +1,7 @@
 import readlineSync from 'readline-sync';
 import { naoExucutaReadLineSeEhTeste } from '../config/test.config.js';
 
-const calcuadora = (numero1, numero2, operacao) => {
+export const calcuadora = (numero1, numero2, operacao) => {
     let mensagem;
 
     switch (operacao) {
