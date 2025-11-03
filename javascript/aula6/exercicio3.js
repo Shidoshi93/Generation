@@ -1,19 +1,39 @@
 import readlineSync from 'readline-sync';
 
-// Refatorar para poder testar as funções separadamente
+const ehAPtoParaDoarSangue = (nome, idade, ehDoador) => {
+    let mensagem = "";
 
-const nome = readlineSync.question('Qual o seu nome? ');
-const idade = readlineSync.questionInt('Qual a sua idade? ');
-const ehDoador = "";
+    if (idade >= 60 && idade <= 69 && ehDoador === 's') {
+        mensagem = `${nome} está apto para doar sangue!`;
+    }
 
-if(idade > 18 && idade > 69) {
-    ehDoador = readlineSync.question('Você é doador de sangue? (s/n) ').toLowerCase();
+    if (idade >= 60 && idade <= 69 && ehDoador === 'n' ||
+        idade < 18 || idade > 69) {
+        mensagem = `${nome} não está apto para doar sangue!`;
+    }
+    
+    if (idade >= 18 && idade < 60) {
+        mensagem = `${nome} está apto para doar sangue!`;
+    }
+
+    console.log(mensagem);
+    return mensagem;
 }
 
-if (idade >= 60 && idade <= 69 && ehDoador === 's') {
-    console.log(`${nome} está apto para doar sangue!`);
-} else if (idade >= 18 && idade <= 69) {
-    console.log(`${nome} está apto para doar sangue!`);
-} else {
-    console.log(`${nome} não está apto para doar sangue!`)
+const executarVerificacao = () => {
+    const nome = readlineSync.question('Qual o seu nome? ');
+    const idade = readlineSync.questionInt('Qual a sua idade? ');
+    let ehDoador = "";
+
+    if (idade >= 60 && idade <= 69) {
+        ehDoador = readlineSync.question('Você é doador de sangue? (s/n) ').toLowerCase();
+    }
+
+    ehAPtoParaDoarSangue(nome, idade, ehDoador);
+};
+
+const mainScriptPath = process.argv[1];
+
+if (mainScriptPath.includes("jest") === false) {
+    executarVerificacao();
 }
