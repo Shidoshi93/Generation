@@ -1,10 +1,5 @@
 import readlineSync from 'readline-sync';
-
-// Refatorar para poder testar as funções separadamente
-
-const subFilo = readlineSync.question('Digite o subfilo do animal (Vertebrado/Invertebrado): ').toLowerCase();
-const classe = readlineSync.question('Digite a classe do animal (Ave/Mamífero/Inseto/Anelídeo): ').toLowerCase();
-const alimentacao = readlineSync.question('Digite a alimentação do animal (Carnívoro/Herbívoro/Onívoro): ').toLowerCase();
+import { naoExucutaReadLineSeEhTeste } from '../config/test.config.js';
 
 const classificacao = {
     vertebrado: {
@@ -29,10 +24,26 @@ const classificacao = {
     }
 };
 
-const animal = classificacao?.[subFilo]?.[classe]?.[alimentacao];
+export const classificarAnimal = (subFilo, classe, alimentacao) => {
+    const animal = classificacao?.[subFilo]?.[classe]?.[alimentacao];
+    let mensagem;
 
-if (animal) {
-    console.log(`O animal classificado é: ${animal}`);
-} else {
-    console.log('Classificação inválida!');
+    if (animal) {
+        mensagem = `O animal classificado é: ${animal}`;
+    } else {
+        mensagem = 'Classificação inválida!';
+    }
+
+    console.log(mensagem);
+    return mensagem;
 }
+
+const executarVerificacao = () => {
+    const subFilo = readlineSync.question('Digite o subfilo do animal (Vertebrado/Invertebrado): ').toLowerCase();
+    const classe = readlineSync.question('Digite a classe do animal (Ave/Mamífero/Inseto/Anelídeo): ').toLowerCase();
+    const alimentacao = readlineSync.question('Digite a alimentação do animal (Carnívoro/Herbívoro/Onívoro): ').toLowerCase();
+
+    classificarAnimal(subFilo, classe, alimentacao);
+}
+
+naoExucutaReadLineSeEhTeste(executarVerificacao);

@@ -1,32 +1,53 @@
 import readlineSync from 'readline-sync';
+import { naoExucutaReadLineSeEhTeste } from '../config/test.config.js';
 
-// Refatorar para poder testar as funções separadamente
+export const executaOpecaracaoBancaria = (operacao, valorSaqueOuDeposito) => {
+    let mensagem;
+    let saldo = 1000.00;
 
-const operacao = readlineSync.questionInt('Digite a operação desejada (1 = saldo, 2 = saque, 3 = deposito): ');
-let saqueOuDeposito;
+    switch (operacao) {
+        case 1:
+            mensagem = `Seu saldo atual é: R$ ${saldo.toFixed(2)}`;
+            break;
+        case 2:
+            if (valorSaqueOuDeposito > saldo) {
+                mensagem = "Saldo insuficiente para realizar o saque.";
+            } else {
+                saldo -= valorSaqueOuDeposito;
+                mensagem = `Saque realizado com sucesso! Novo saldo: R$ ${saldo.toFixed(2)}`;
+            }
+            break;
+        case 3:
+            saldo += valorSaqueOuDeposito;
+            mensagem = `Depósito realizado com sucesso! Novo saldo: R$ ${saldo.toFixed(2)}`;
+            break;
+        default:
+            mensagem = "Operação inválida!";
+    }
 
-if (operacao === 2 || operacao === 3) {
-    saqueOuDeposito = readlineSync.questionFloat('Digite o valor do saque ou depósito: ');
+    console.log(mensagem);
+    return mensagem;
 }
 
-let saldo = 1000.00;
+const executarVerificacao = () => {
+    let valorSaqueOuDeposito;
 
-switch (operacao) {
-    case 1:
-        console.log(`Seu saldo atual é: R$ ${saldo.toFixed(2)}`);
-        break;
-    case 2:
-        if (saqueOuDeposito > saldo) {
-            console.log("Saldo insuficiente para realizar o saque.");
-        } else {
-            saldo -= saqueOuDeposito;
-            console.log(`Saque realizado com sucesso! Novo saldo: R$ ${saldo.toFixed(2)}`);
-        }
-        break;
-    case 3:
-        saldo += saqueOuDeposito;
-        console.log(`Depósito realizado com sucesso! Novo saldo: R$ ${saldo.toFixed(2)}`);
-        break;
-    default:
-        console.log("Operação inválida!");
+    const operacao = readlineSync
+    .questionInt(
+        "Digite a operação desejada " + 
+        "(1 = saldo, 2 = saque, 3 = deposito): "
+    );
+
+    if (operacao === 2 || operacao === 3) {
+        valorSaqueOuDeposito = readlineSync
+            .questionFloat(
+                operacao === 2 ? 
+                    "Digite o valor do saque: " :
+                    "DIgite o valor do depósito: "
+            );
+    }
+
+    executaOpecaracaoBancaria(operacao, valorSaqueOuDeposito);
 }
+
+naoExucutaReadLineSeEhTeste(executarVerificacao);

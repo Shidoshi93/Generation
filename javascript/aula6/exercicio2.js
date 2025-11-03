@@ -1,6 +1,5 @@
 import readlineSync from 'readline-sync';
-
-// Refatorar para poder testar as funções separadamente
+import { naoExucutaReadLineSeEhTeste } from '../config/test.config.js';
 
 export function verificaParOuImpar(num) {
     if (num % 2 === 0 && num > 0) {
@@ -32,8 +31,4 @@ function executarVerificacao() {
     verificaParOuImpar(readlineSync.questionInt("Digite um numero inteiro: "));
 };
 
-const mainScriptPath = process.argv[1];
-
-if (mainScriptPath.includes("jest.js") === false) {
-    executarVerificacao();
-}
+naoExucutaReadLineSeEhTeste(executarVerificacao);
