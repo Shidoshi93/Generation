@@ -25,12 +25,16 @@ const classificacao = {
 
 export const classificarAnimal = (subFilo, classe, alimentacao) => {
     const animal = classificacao?.[subFilo]?.[classe]?.[alimentacao];
+    let mensagem;
 
     if (animal) {
-        console.log(`O animal classificado é: ${animal}`);
+        mensagem = `O animal classificado é: ${animal}`;
     } else {
-        console.log('Classificação inválida!');
+        mensagem = 'Classificação inválida!';
     }
+
+    console.log(mensagem);
+    return mensagem;
 }
 
 const executarVerificacao = () => {
