@@ -52,7 +52,7 @@ Os códigos e projetos são organizados de forma a demonstrar o aprendizado modu
    ```
 4. Execute os testes:
    ```bash
-   npm test (roda todos os testes) || npm test path/do/teste/especifico.js (path do teste específico)
+   npm test (roda todos os testes) || npm test path/do/teste/especifico.js
    ```
 
 ---
