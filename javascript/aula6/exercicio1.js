@@ -1,4 +1,5 @@
 import readlineSync from 'readline-sync';
+import { naoExucutaReadLineSeEhTeste } from '../config/test.config.js';
 
 export function compararSoma(valorA, valorB, valorC, outputFunc = console.log) {
     const somaAB = valorA + valorB;
@@ -24,8 +25,4 @@ function executarComparacao() {
     compararSoma(valorA, valorB, valorC);
 }
 
-const mainScriptPath = process.argv[1];
-
-if (mainScriptPath.includes("jest") === false) {
-    executarComparacao();
-}
+naoExucutaReadLineSeEhTeste(executarComparacao);

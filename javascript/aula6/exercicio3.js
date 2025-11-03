@@ -1,4 +1,5 @@
 import readlineSync from 'readline-sync';
+import { naoExucutaReadLineSeEhTeste } from '../config/test.config.js';
 
 export const ehAptoParaDoarSangue = (nome, idade, jaEhDoador) => {
     let mensagem = "";
@@ -32,8 +33,4 @@ const executarVerificacao = () => {
     ehAptoParaDoarSangue(nome, idade, jaEhDoador);
 };
 
-const mainScriptPath = process.argv[1];
-
-if (mainScriptPath.includes("jest") === false) {
-    executarVerificacao();
-}
+naoExucutaReadLineSeEhTeste(executarVerificacao);

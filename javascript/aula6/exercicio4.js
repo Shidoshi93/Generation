@@ -1,4 +1,5 @@
 import readlineSync from 'readline-sync';
+import { naoExucutaReadLineSeEhTeste } from '../config/test.config.js';
 
 const classificacao = {
     vertebrado: {
@@ -45,8 +46,4 @@ const executarVerificacao = () => {
     classificarAnimal(subFilo, classe, alimentacao);
 }
 
-const mainScriptPath = process.argv[1];
-
-if (mainScriptPath.includes("jest") === false) {
-    executarVerificacao();
-}
+naoExucutaReadLineSeEhTeste(executarVerificacao);
