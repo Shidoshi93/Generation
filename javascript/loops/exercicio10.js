@@ -13,7 +13,7 @@ export const matriz = [
     [7.5, 8.5, 9.5, 10.0]
 ];
 
-export const calculaMedias = () => {
+export const calculaMedias = (matriz) => {
     const medias = [];
     for (let i = 0; i < matriz.length; i++) {
         const linha = matriz[i];
@@ -36,4 +36,23 @@ export const calculaMedias = () => {
     return medias;
 }
 
-naoExucutaReadLineSeEhTeste(calculaMedias);
+naoExucutaReadLineSeEhTeste(() => calculaMedias(matriz));
+
+//Exemplo usando map e reduce:
+
+/*
+export const calculaMedias = (matriz) => {
+    const medias = matriz.map(linha => {
+    
+        const soma = linha.reduce((acumulador, valorAtual) => 
+            acumulador + valorAtual, 0
+        );
+        
+        const mediaLinha = soma / linha.length;
+        
+        return mediaLinha.toFixed(1);
+    });
+
+    return medias;
+}
+*/
