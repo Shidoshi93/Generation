@@ -37,3 +37,22 @@ export const calculaMedias = (matriz) => {
 }
 
 naoExucutaReadLineSeEhTeste(() => calculaMedias(matriz));
+
+//Exemplo usando map e reduce:
+
+/*
+export const calculaMedias = (matriz) => {
+    const medias = matriz.map(linha => {
+    
+        const soma = linha.reduce((acumulador, valorAtual) => 
+            acumulador + valorAtual, 0
+        );
+        
+        const mediaLinha = soma / linha.length;
+        
+        return mediaLinha.toFixed(1);
+    });
+
+    return medias;
+}
+*/
