@@ -1,4 +1,5 @@
 import readline from 'readline-sync'
+import { naoExucutaReadLineSeEhTeste } from '../config/test.config.js';
 
 // Para resolver esta questão, mesmo sendo pra praticar o WHILE,
 // acabei fazendo uso de outros laços de repetição, como o do...while, map e for.
@@ -18,8 +19,6 @@ const OPCOES_GENERO = [
     "Homem Trans",
     "Outros"
 ];
-
-const pessoas = [];
 
 const obterEntradaValidada = (pergunta, opcoes) => {
     const promptOpcoes = opcoes
@@ -45,6 +44,7 @@ const obterEntradaValidada = (pergunta, opcoes) => {
 };
 
 const coletarDados = () => {
+    const pessoas = [];
     let continuar = true;
 
     while (continuar) {
@@ -69,9 +69,12 @@ const coletarDados = () => {
             continuar = false;
         }
     }
+
+    return pessoas;
 }
 
 export const computarDados = () => {
+    const pessoas = coletarDados();
     let totalIdade = 0;
     const resultado = {
         devsBackend: 0,
@@ -117,8 +120,18 @@ export const computarDados = () => {
     resultado.mediaIdade = pessoas.length > 0 ? (totalIdade / pessoas.length) : 0;
     
     console.log("\n--- Resultados Computados ---");
-    console.log(resultado);
+    exibirResultado(resultado);
+
+    return resultado;
 }
 
-coletarDados();
-computarDados();
+const exibirResultado = (entrada) => {
+    console.log(`Total de pessoas desenvolvedoras Backend: ${entrada.devsBackend}`);
+    console.log(`Total de Mulheres Cis e Trans desenvolvedoras Frontend: ${entrada.mulheresFrontend}`);
+    console.log(`Total de Homens Cis e Trans desenvolvedores Mobile maiores de 40 anos: ${entrada.homensMobileAcimaDe40Anos}`);
+    console.log(`Total de Pessoas Não Binárias desenvolvedoras FullStack menores de 30 anos: ${entrada.naoBinariosFullStackMenoresDe30Anos}`);
+    console.log(`O número total de pessoas que responderam à pesquisa: ${entrada.totalRespostaPesquisa}`);
+    console.log(`A média de idade das pessoas que responderam à pesquisa: ${entrada.mediaIdade}`);
+}
+
+naoExucutaReadLineSeEhTeste(computarDados);
