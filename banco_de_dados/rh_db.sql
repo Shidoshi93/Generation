@@ -152,34 +152,3 @@ JOIN
 	Contratos co ON c.id_colaborador = co.id_colaborador
 WHERE 
 	c.id_colaborador = 6;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

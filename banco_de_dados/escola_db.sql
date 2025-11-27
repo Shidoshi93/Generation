@@ -40,4 +40,3 @@ WHERE id = 6;
 
 -- SELECT de todos estudandtes
 SELECT * FROM estudantes
-

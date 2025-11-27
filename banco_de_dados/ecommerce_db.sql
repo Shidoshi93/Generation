@@ -40,7 +40,3 @@ WHERE id = 1;
 
 -- SELECT de todos os produtos
 SELECT * FROM produtos;
-
-
-
-
