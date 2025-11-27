@@ -1,3 +1,10 @@
+-- 1. Criação do banco de dados
+CREATE DATABASE recursos_humanos_db
+    CHARACTER SET utf8mb4 
+    COLLATE utf8mb4_unicode_ci;
+
+-- 2. Seleção do banco de dados
+USE recursos_humanos_db;
 
 -- Criando tabela departamentos
 CREATE TABLE Departamentos (
