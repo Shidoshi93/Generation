@@ -1,5 +1,5 @@
 -- Criação do banco de dados
-CREATE DATABASE db_generation_game_online
+CREATE DATABASE IF NOT EXISTS db_generation_game_online
 CHARACTER SET utf8mb4 
 COLLATE utf8mb4_unicode_ci;
 

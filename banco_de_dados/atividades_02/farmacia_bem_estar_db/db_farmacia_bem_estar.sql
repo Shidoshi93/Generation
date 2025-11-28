@@ -1,5 +1,5 @@
 -- Criação do banco de dados
-CREATE DATABASE db_farmacia_bem_estar
+CREATE DATABASE IF NOT EXISTS db_farmacia_bem_estar
 CHARACTER SET utf8mb4 
 COLLATE utf8mb4_unicode_ci;
 

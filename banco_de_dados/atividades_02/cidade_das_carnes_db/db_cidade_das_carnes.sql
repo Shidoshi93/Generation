@@ -1,5 +1,5 @@
 -- Criação do banco de dados
-CREATE DATABASE db_cidade_das_carnes
+CREATE DATABASE IF NOT EXISTS db_cidade_das_carnes
 CHARACTER SET utf8mb4 
 COLLATE utf8mb4_unicode_ci;
 

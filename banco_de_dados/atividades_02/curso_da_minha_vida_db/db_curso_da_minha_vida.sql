@@ -1,5 +1,5 @@
 -- Criação do banco de dados
-CREATE DATABASE db_curso_da_minha_vida
+CREATE DATABASE IF NOT EXISTS db_curso_da_minha_vida
 CHARACTER SET utf8mb4 
 COLLATE utf8mb4_unicode_ci;
 
