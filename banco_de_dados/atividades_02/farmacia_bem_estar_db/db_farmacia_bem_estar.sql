@@ -29,7 +29,10 @@ CREATE TABLE tb_produtos (
     preco DECIMAL(10, 2) NOT NULL,
     id_categoria INT NOT NULL,
     
-    FOREIGN KEY (id_categoria) REFERENCES tb_categorias(id_categoria)
+    FOREIGN KEY (id_categoria) REFERENCES tb_categorias(id_categoria),
+
+    -- Adicionando uma restrição para garantir que o preço seja positivo
+    CONSTRAINT ck_preco_positivo CHECK (preco > 0)
 );
 
 -- Inserção de 8 registros na tabela tb_produtos

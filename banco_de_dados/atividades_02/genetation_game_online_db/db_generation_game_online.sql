@@ -31,7 +31,12 @@ CREATE TABLE tb_personagens (
     pontos_vida INT NOT NULL,
     id_classe INT NOT NULL,
     
-    FOREIGN KEY (id_classe) REFERENCES tb_classes(id_classe)
+    FOREIGN KEY (id_classe) REFERENCES tb_classes(id_classe),
+
+    -- Adicionando uma restrição para garantir valores máximos
+    CONSTRAINT ck_mx_ataque CHECK (poder_ataque <= 3000),
+    CONSTRAINT ck_mx_defesa CHECK (poder_defesa <= 3000),
+    CONSTRAINT ck_mx_vida CHECK (pontos_vida <= 5000)
 );
 
 -- Inserção de 8 registros na tabela tb_personagens
