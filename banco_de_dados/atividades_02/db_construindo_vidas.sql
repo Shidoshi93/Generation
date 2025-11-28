@@ -43,10 +43,6 @@ INSERT INTO tb_produtos (nome_produto, descricao_produto, preco, id_categoria) V
 ('Fechadura de Cilindro', 'Fechadura de cilindro com chave para portas internas', 78.90, 4),
 ('Dobradiça de Aço Cromado', 'Dobradiça de aço cromado resistente para portas pesadas', 112.50, 4);
 
--- ================================================
--- CONSULTAS (SELECTS)
--- ================================================
-
 -- 1. SELECT: Produtos com valor maior que R$ 100,00
 SELECT * FROM tb_produtos WHERE preco > 100.00;
 

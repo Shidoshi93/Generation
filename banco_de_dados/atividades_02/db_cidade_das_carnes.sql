@@ -43,10 +43,6 @@ INSERT INTO tb_produtos (nome_produto, descricao_produto, preco, id_categoria) V
 ('Coração de Boi', 'Coração bovino fresco para receitas especiais', 38.50, 5),
 ('Fígado de Boi', 'Fígado bovino de primeira qualidade para preparo', 52.00, 5);
 
--- ================================================
--- CONSULTAS (SELECTS)
--- ================================================
-
 -- 1. SELECT: Produtos com valor maior que R$ 50,00
 SELECT * FROM tb_produtos WHERE preco > 50.00;
 

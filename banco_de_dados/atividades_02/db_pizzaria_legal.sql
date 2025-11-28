@@ -43,10 +43,6 @@ INSERT INTO tb_pizzas (nome_pizza, descricao_pizza, valor, id_categoria) VALUES
 ('Banana com Canela', 'Pizza doce com banana caramelizada e canela', 52.00, 4),
 ('Trufa e Bacon', 'Pizza especial com trufa negra, bacon crocante e queijo gouda', 89.90, 5);
 
--- ================================================
--- CONSULTAS (SELECTS)
--- ================================================
-
 -- 1. SELECT: Pizzas com valor maior que R$ 45,00
 SELECT * FROM tb_pizzas WHERE valor > 45.00;
 

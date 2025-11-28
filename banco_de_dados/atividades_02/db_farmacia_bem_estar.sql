@@ -43,10 +43,6 @@ INSERT INTO tb_produtos (nome_produto, descricao_produto, preco, id_categoria) V
 ('Algodão Hospitalar 500g', 'Algodão puro para limpeza e curativos', 18.75, 4),
 ('Curativo Estéril 7x7cm', 'Curativos estéreis com antisséptico para ferimentos', 42.00, 5);
 
--- ================================================
--- CONSULTAS (SELECTS)
--- ================================================
-
 -- 1. SELECT: Produtos com valor maior que R$ 50,00
 SELECT * FROM tb_produtos WHERE preco > 50.00;
 

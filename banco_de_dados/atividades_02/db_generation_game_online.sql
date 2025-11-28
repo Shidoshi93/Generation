@@ -45,10 +45,6 @@ INSERT INTO tb_personagens (nome_personagem, poder_ataque, poder_defesa, pontos_
 ('Baldrick - Guerreiro de Aço', 1900, 2800, 5000, 3),
 ('Elara - Paladina Curadora', 1600, 2100, 3500, 4);
 
--- ================================================
--- CONSULTAS (SELECTS)
--- ================================================
-
 -- 1. SELECT: Personagens com poder de ataque maior que 2000
 SELECT * FROM tb_personagens WHERE poder_ataque > 2000;
 
